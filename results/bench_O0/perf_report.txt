@@ -3,58 +3,58 @@
 #
 # Total Lost Samples: 0
 #
-# Samples: 6K of event 'task-clock:ppp'
-# Event count (approx.): 6168168162
+# Samples: 5K of event 'task-clock:ppp'
+# Event count (approx.): 5248248243
 #
-# Overhead  Command   Shared Object      Symbol                                IPC   [IPC Coverage]
-# ........  ........  .................  ....................................  ....................
+# Overhead  Command   Shared Object      Symbol                                         IPC   [IPC Coverage]
+# ........  ........  .................  .............................................  ....................
 #
-    39.60%  bench_O0  bench_O0           [.] matmul                            -      -            
+    37.90%  bench_O0  bench_O0           [.] matmul                                     -      -            
             |
             ---matmul
                main
-               __libc_start_call_main
-               __libc_start_main_impl (inlined)
+               0x7b63657a91c9
+               __libc_start_main
                _start
-    21.68%  bench_O0  bench_O0           [.] dot                               -      -            
+    21.86%  bench_O0  bench_O0           [.] dot                                        -      -            
             |
             ---dot
                main
-               __libc_start_call_main
-               __libc_start_main_impl (inlined)
+               0x7b63657a91c9
+               __libc_start_main
                _start
-    17.36%  bench_O0  bench_O0           [.] saxpy                             -      -            
+    19.68%  bench_O0  bench_O0           [.] saxpy                                      -      -            
             |
             ---saxpy
                main
-               __libc_start_call_main
-               __libc_start_main_impl (inlined)
+               0x7b63657a91c9
+               __libc_start_main
                _start
-    10.81%  bench_O0  bench_O0           [.] cmp                               -      -            
+     9.82%  bench_O0  bench_O0           [.] cmp                                        -      -            
             |
             ---cmp
-               msort_with_tmp (inlined)
+               0x7b63657c8867
                |          
-                --10.74%--msort_with_tmp (inlined)
-                          |          
-                          |--10.08%--msort_with_tmp (inlined)
-                          |          msort_with_tmp (inlined)
-                          |          |          
-                          |          |--9.49%--msort_with_tmp (inlined)
-                          |          |          msort_with_tmp (inlined)
-                          |          |          |          
-                          |          |          |--8.89%--msort_with_tmp (inlined)
-                          |          |          |          msort_with_tmp (inlined)
-                          |          |          |          |          
-                          |          |          |          |--8.34%--msort_with_tmp (inlined)
-                          |          |          |          |          msort_with_tmp (inlined)
-                          |          |          |          |          |          
-                          |          |          |          |          |--7.66%--msort_with_tmp (inlined)
-                          |          |          |          |          |          msort_with_tmp (inlined)
-                          |          |          |          |          |          |          
-                          |          |          |          |          |          |--7.04%--msort_with_tmp (inlined)
-                          |          |          |          |          |          |          msort_with_tmp (inlined)
-                          |          |          |          |          |          |          |          
-                          |          |          |          |          |          |          |--6.39%--msort_with_tmp (inlined)
-                          |          |          |          |          |          |          |          msort_with_tmp (inlined)
-                          |          |          |          |          |          |          |          |          
+               |--4.94%--0x7b63657c8740
+               |          |          
+               |          |--2.40%--0x7b63657c8724
+               |          |          |          
+               |          |          |--1.30%--0x7b63657c8740
+               |          |          |          |          
+               |          |          |          |--0.69%--0x7b63657c8740
+               |          |          |          |          
+               |          |          |           --0.53%--0x7b63657c8724
+               |          |          |          
+               |          |           --0.95%--0x7b63657c8724
+               |          |          
+               |           --2.25%--0x7b63657c8740
+               |                     |          
+               |                     |--1.13%--0x7b63657c8724
+               |                     |          |          
+               |                     |           --0.57%--0x7b63657c8740
+               |                     |          
+               |                      --1.05%--0x7b63657c8740
+               |                                |          
+               |                                 --0.55%--0x7b63657c8724
+               |          
+               |--4.37%--0x7b63657c8724

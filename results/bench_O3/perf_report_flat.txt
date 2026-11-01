@@ -3,19 +3,27 @@
 #
 # Total Lost Samples: 0
 #
-# Samples: 2K of event 'task-clock:ppp'
-# Event count (approx.): 2026026024
+# Samples: 1K of event 'task-clock:ppp'
+# Event count (approx.): 1412412411
 #
-# Overhead  Command   Shared Object      Symbol                              
-# ........  ........  .................  ....................................
+# Overhead  Command   Shared Object      Symbol                         
+# ........  ........  .................  ...............................
 #
-    30.73%  bench_O3  bench_O3           [.] dot.constprop.0
-    26.63%  bench_O3  libc.so.6          [.] msort_with_tmp.part.0
-    18.53%  bench_O3  bench_O3           [.] saxpy.constprop.0
-    13.49%  bench_O3  bench_O3           [.] cmp
-     4.35%  bench_O3  bench_O3           [.] matmul.constprop.0
-     3.46%  bench_O3  libc.so.6          [.] __memmove_evex_unaligned_erms
-     1.14%  bench_O3  bench_O3           [.] fill
+    35.58%  bench_O3  bench_O3           [.] dot.constprop.0
+    13.25%  bench_O3  bench_O3           [.] cmp
+    11.20%  bench_O3  bench_O3           [.] saxpy.constprop.0
+     6.59%  bench_O3  libc.so.6          [.] 0x000000000004986c
+     6.31%  bench_O3  libc.so.6          [.] 0x000000000004986f
+     6.02%  bench_O3  libc.so.6          [.] 0x0000000000049890
+     4.96%  bench_O3  libc.so.6          [.] 0x0000000000049894
+     2.62%  bench_O3  bench_O3           [.] matmul.constprop.0
+     1.70%  bench_O3  libc.so.6          [.] 0x000000000004987b
+     1.28%  bench_O3  libc.so.6          [.] 0x0000000000049863
+     1.13%  bench_O3  libc.so.6          [.] 0x00000000000498a0
+     0.99%  bench_O3  bench_O3           [.] fill
+     0.99%  bench_O3  libc.so.6          [.] 0x0000000000049858
+     0.92%  bench_O3  libc.so.6          [.] 0x0000000000049866
+     0.57%  bench_O3  libc.so.6          [.] 0x0000000000198c49
 #
 # (Cannot load tips.txt file, please install perf!)
 #

@@ -1,4 +1,4 @@
- Percent |	Source code & Disassembly of bench_O3 for task-clock:ppp (375 samples, percent: local period)
+ Percent |	Source code & Disassembly of bench_O3 for task-clock:ppp (158 samples, percent: local period)
 -------------------------------------------------------------------------------------------------------------
          :
          :
@@ -18,13 +18,13 @@
     0.00 :   1937:   lea    rcx,[rax+0x1000000]
     0.00 :   193e:   xchg   ax,ax
          : 17   y[i] = a * x[i] + y[i];
-    0.27 :   1940:   vmovaps ymm0,YMMWORD PTR [rdx]
-   43.47 :   1944:   vfmadd213ps ymm0,ymm1,YMMWORD PTR [rax]
-   50.40 :   1949:   add    rax,0x20
-    1.60 :   194d:   add    rdx,0x20
-    0.00 :   1951:   vmovaps YMMWORD PTR [rax-0x20],ymm0
+    5.70 :   1940:   vmovaps ymm0,YMMWORD PTR [rdx]
+   32.91 :   1944:   vfmadd213ps ymm0,ymm1,YMMWORD PTR [rax]
+   53.16 :   1949:   add    rax,0x20
+    1.27 :   194d:   add    rdx,0x20
+    2.53 :   1951:   vmovaps YMMWORD PTR [rax-0x20],ymm0
          : 23   for (size_t i = 0; i < n; i++)
-    4.27 :   1956:   cmp    rax,rcx
+    4.43 :   1956:   cmp    rax,rcx
     0.00 :   1959:   jne    1940 <saxpy.constprop.0+0x20>
     0.00 :   195b:   vzeroupper
          : 27   }

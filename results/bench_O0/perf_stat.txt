@@ -1,12 +1,12 @@
-# started on Sat Oct 24 18:24:20 2026
+# started on Sun Nov  1 19:38:52 2026
 
 
  Performance counter stats for 'build/bench_O0':
 
-           6131.86 msec task-clock                       #    0.999 CPUs utilized             
-                35      context-switches                 #    5.708 /sec                      
-                10      cpu-migrations                   #    1.631 /sec                      
-             12096      page-faults                      #    1.973 K/sec                     
+          5,106.77 msec task-clock                       #    0.995 CPUs utilized             
+               286      context-switches                 #   56.004 /sec                      
+                19      cpu-migrations                   #    3.721 /sec                      
+            12,095      page-faults                      #    2.368 K/sec                     
    <not supported>      cycles                                                                
    <not supported>      instructions                                                          
    <not supported>      branches                                                              
@@ -16,9 +16,9 @@
    <not supported>      LLC-loads                                                             
    <not supported>      LLC-load-misses                                                       
 
-       6.138191016 seconds time elapsed
+       5.132607172 seconds time elapsed
 
-       5.614538000 seconds user
-       0.037179000 seconds sys
+       5.086880000 seconds user
+       0.020983000 seconds sys
 
 

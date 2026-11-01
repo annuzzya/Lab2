@@ -3,18 +3,21 @@
 #
 # Total Lost Samples: 0
 #
-# Samples: 6K of event 'task-clock:ppp'
-# Event count (approx.): 6168168162
+# Samples: 5K of event 'task-clock:ppp'
+# Event count (approx.): 5248248243
 #
-# Overhead  Command   Shared Object      Symbol                              
-# ........  ........  .................  ....................................
+# Overhead  Command   Shared Object      Symbol                                       
+# ........  ........  .................  .............................................
 #
-    39.60%  bench_O0  bench_O0           [.] matmul
-    21.68%  bench_O0  bench_O0           [.] dot
-    17.36%  bench_O0  bench_O0           [.] saxpy
-    10.81%  bench_O0  bench_O0           [.] cmp
-     8.36%  bench_O0  libc.so.6          [.] msort_with_tmp.part.0
-     0.88%  bench_O0  libc.so.6          [.] __memmove_evex_unaligned_erms
+    37.90%  bench_O0  bench_O0           [.] matmul
+    21.86%  bench_O0  bench_O0           [.] dot
+    19.68%  bench_O0  bench_O0           [.] saxpy
+     9.82%  bench_O0  bench_O0           [.] cmp
+     1.89%  bench_O0  libc.so.6          [.] 0x000000000004986f
+     1.74%  bench_O0  libc.so.6          [.] 0x0000000000049894
+     1.60%  bench_O0  libc.so.6          [.] 0x000000000004986c
+     1.53%  bench_O0  libc.so.6          [.] 0x0000000000049890
+     0.57%  bench_O0  bench_O0           [.] fill
 #
 # (Cannot load tips.txt file, please install perf!)
 #

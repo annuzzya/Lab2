@@ -1,0 +1,4 @@
+build/
+FlameGraph/
+perf.data*
+*.perf

@@ -1,4 +1,4 @@
- Percent |	Source code & Disassembly of bench_O0 for task-clock:ppp (1336 samples, percent: local period)
+ Percent |	Source code & Disassembly of bench_O0 for task-clock:ppp (1146 samples, percent: local period)
 --------------------------------------------------------------------------------------------------------------
          :
          :
@@ -25,24 +25,24 @@
     0.00 :   14dc:   mov    QWORD PTR [rbp-0x8],0x0
     0.00 :   14e4:   jmp    152b <dot+0x6c>
          : 24   s += x[i] * y[i];
-    9.66 :   14e6:   mov    rax,QWORD PTR [rbp-0x8]
-    0.07 :   14ea:   lea    rdx,[rax*4+0x0]
+    1.13 :   14e6:   mov    rax,QWORD PTR [rbp-0x8]
+    0.09 :   14ea:   lea    rdx,[rax*4+0x0]
     0.00 :   14f2:   mov    rax,QWORD PTR [rbp-0x18]
     0.00 :   14f6:   add    rax,rdx
-   10.40 :   14f9:   movss  xmm1,DWORD PTR [rax]
-    1.12 :   14fd:   mov    rax,QWORD PTR [rbp-0x8]
+   11.95 :   14f9:   movss  xmm1,DWORD PTR [rax]
+    0.70 :   14fd:   mov    rax,QWORD PTR [rbp-0x8]
     0.00 :   1501:   lea    rdx,[rax*4+0x0]
     0.00 :   1509:   mov    rax,QWORD PTR [rbp-0x20]
-    9.96 :   150d:   add    rax,rdx
+    1.75 :   150d:   add    rax,rdx
     0.00 :   1510:   movss  xmm0,DWORD PTR [rax]
-    2.10 :   1514:   mulss  xmm0,xmm1
-    0.52 :   1518:   movss  xmm1,DWORD PTR [rbp-0xc]
-   11.53 :   151d:   addss  xmm0,xmm1
-   44.76 :   1521:   movss  DWORD PTR [rbp-0xc],xmm0
+    0.35 :   1514:   mulss  xmm0,xmm1
+    0.17 :   1518:   movss  xmm1,DWORD PTR [rbp-0xc]
+   20.86 :   151d:   addss  xmm0,xmm1
+   51.40 :   1521:   movss  DWORD PTR [rbp-0xc],xmm0
          : 39   for (size_t i = 0; i < n; i++)
-    9.88 :   1526:   add    QWORD PTR [rbp-0x8],0x1
-    0.00 :   152b:   mov    rax,QWORD PTR [rbp-0x8]
-    0.00 :   152f:   cmp    rax,QWORD PTR [rbp-0x28]
+   10.91 :   1526:   add    QWORD PTR [rbp-0x8],0x1
+    0.52 :   152b:   mov    rax,QWORD PTR [rbp-0x8]
+    0.17 :   152f:   cmp    rax,QWORD PTR [rbp-0x28]
     0.00 :   1533:   jb     14e6 <dot+0x27>
          : 44   return s;
     0.00 :   1535:   movss  xmm0,DWORD PTR [rbp-0xc]

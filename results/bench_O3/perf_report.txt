@@ -3,58 +3,58 @@
 #
 # Total Lost Samples: 0
 #
-# Samples: 2K of event 'task-clock:ppp'
-# Event count (approx.): 2026026024
+# Samples: 1K of event 'task-clock:ppp'
+# Event count (approx.): 1412412411
 #
-# Overhead  Command   Shared Object      Symbol                                IPC   [IPC Coverage]
-# ........  ........  .................  ....................................  ....................
+# Overhead  Command   Shared Object      Symbol                           IPC   [IPC Coverage]
+# ........  ........  .................  ...............................  ....................
 #
-    30.73%  bench_O3  bench_O3           [.] dot.constprop.0                   -      -            
+    35.58%  bench_O3  bench_O3           [.] dot.constprop.0              -      -            
             |
             ---dot (inlined)
                main
-               __libc_start_call_main
-               __libc_start_main_impl (inlined)
+               0x77c8d00091c9
+               __libc_start_main
                _start
-    26.63%  bench_O3  libc.so.6          [.] msort_with_tmp.part.0             -      -            
-            |          
-             --26.38%--msort_with_tmp (inlined)
-                       msort_with_tmp (inlined)
-                       |          
-                       |--24.90%--msort_with_tmp (inlined)
-                       |          msort_with_tmp (inlined)
-                       |          |          
-                       |          |--23.67%--msort_with_tmp (inlined)
-                       |          |          msort_with_tmp (inlined)
-                       |          |          |          
-                       |          |          |--22.28%--msort_with_tmp (inlined)
-                       |          |          |          msort_with_tmp (inlined)
-                       |          |          |          |          
-                       |          |          |          |--21.00%--msort_with_tmp (inlined)
-                       |          |          |          |          msort_with_tmp (inlined)
-                       |          |          |          |          |          
-                       |          |          |          |          |--19.61%--msort_with_tmp (inlined)
-                       |          |          |          |          |          msort_with_tmp (inlined)
-                       |          |          |          |          |          |          
-                       |          |          |          |          |          |--18.23%--msort_with_tmp (inlined)
-                       |          |          |          |          |          |          msort_with_tmp (inlined)
-                       |          |          |          |          |          |          |          
-                       |          |          |          |          |          |          |--16.60%--msort_with_tmp (inlined)
-                       |          |          |          |          |          |          |          msort_with_tmp (inlined)
-                       |          |          |          |          |          |          |          |          
-                       |          |          |          |          |          |          |          |--14.82%--msort_with_tmp (inlined)
-                       |          |          |          |          |          |          |          |          msort_with_tmp (inlined)
-                       |          |          |          |          |          |          |          |          |          
-                       |          |          |          |          |          |          |          |          |--13.64%--msort_with_tmp (inlined)
-                       |          |          |          |          |          |          |          |          |          msort_with_tmp (inlined)
-                       |          |          |          |          |          |          |          |          |          |          
-                       |          |          |          |          |          |          |          |          |          |--12.35%--msort_with_tmp (inlined)
-                       |          |          |          |          |          |          |          |          |          |          msort_with_tmp (inlined)
-                       |          |          |          |          |          |          |          |          |          |          |          
-                       |          |          |          |          |          |          |          |          |          |          |--11.22%--msort_with_tmp (inlined)
-                       |          |          |          |          |          |          |          |          |          |          |          msort_with_tmp (inlined)
-                       |          |          |          |          |          |          |          |          |          |          |          |          
-                       |          |          |          |          |          |          |          |          |          |          |          |--9.58%--msort_with_tmp (inlined)
-                       |          |          |          |          |          |          |          |          |          |          |          |          msort_with_tmp (inlined)
-                       |          |          |          |          |          |          |          |          |          |          |          |          |          
-                       |          |          |          |          |          |          |          |          |          |          |          |          |--8.50%--msort_with_tmp (inlined)
+    13.25%  bench_O3  bench_O3           [.] cmp                          -      -            
+            |
+            ---cmp
+               0x77c8d0028867
+               |          
+               |--6.24%--0x77c8d0028724
+               |          |          
+               |          |--3.26%--0x77c8d0028724
+               |          |          |          
+               |          |          |--1.63%--0x77c8d0028724
+               |          |          |          |          
+               |          |          |          |--0.85%--0x77c8d0028740
+               |          |          |          |          
+               |          |          |           --0.71%--0x77c8d0028724
+               |          |          |          
+               |          |           --1.35%--0x77c8d0028740
+               |          |                     |          
+               |          |                     |--0.71%--0x77c8d0028740
+               |          |                     |          
+               |          |                      --0.57%--0x77c8d0028724
+               |          |          
+               |           --2.76%--0x77c8d0028740
+               |                     |          
+               |                     |--1.98%--0x77c8d0028724
+               |                     |          |          
+               |                     |          |--1.06%--0x77c8d0028740
+               |                     |          |          |          
+               |                     |          |           --0.57%--0x77c8d0028724
+               |                     |          |          
+               |                     |           --0.78%--0x77c8d0028724
+               |                     |          
+               |                      --0.57%--0x77c8d0028740
+               |          
+               |--6.09%--0x77c8d0028740
+               |          |          
+               |          |--3.19%--0x77c8d0028740
+               |          |          |          
+               |          |          |--1.84%--0x77c8d0028724
+               |          |          |          |          
+               |          |          |          |--0.99%--0x77c8d0028724
+               |          |          |          |          |          
+               |          |          |          |           --0.78%--0x77c8d0028724
