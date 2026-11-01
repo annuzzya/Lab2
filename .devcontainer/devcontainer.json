@@ -1,0 +1,8 @@
+{
+  "name": "lab2-perf",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "privileged": true,
+  "capAdd": ["SYS_ADMIN", "PERFMON", "SYS_PTRACE"],
+  "securityOpt": ["seccomp=unconfined"],
+  "postCreateCommand": "bash scripts/setup.sh"
+}
