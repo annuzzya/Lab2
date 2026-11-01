@@ -1,0 +1,31 @@
+ Percent |	Source code & Disassembly of bench_O3 for task-clock:ppp (375 samples, percent: local period)
+-------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    0000000000001920 <saxpy.constprop.0>:
+         : 6    }
+         : 7    }
+         :
+         : 9    __attribute__((noinline)) void saxpy(float a, const float *x, float *y, size_t n)
+         : 10   {
+         : 11   for (size_t i = 0; i < n; i++)
+    0.00 :   1920:   lea    rax,[rip+0x403719]        # 405040 <Y>
+    0.00 :   1927:   lea    rdx,[rip+0x1403712]        # 1405040 <X>
+    0.00 :   192e:   vbroadcastss ymm1,DWORD PTR [rip+0x16cd]        # 3004 <_IO_stdin_used+0x4>
+    0.00 :   1937:   lea    rcx,[rax+0x1000000]
+    0.00 :   193e:   xchg   ax,ax
+         : 17   y[i] = a * x[i] + y[i];
+    0.27 :   1940:   vmovaps ymm0,YMMWORD PTR [rdx]
+   43.47 :   1944:   vfmadd213ps ymm0,ymm1,YMMWORD PTR [rax]
+   50.40 :   1949:   add    rax,0x20
+    1.60 :   194d:   add    rdx,0x20
+    0.00 :   1951:   vmovaps YMMWORD PTR [rax-0x20],ymm0
+         : 23   for (size_t i = 0; i < n; i++)
+    4.27 :   1956:   cmp    rax,rcx
+    0.00 :   1959:   jne    1940 <saxpy.constprop.0+0x20>
+    0.00 :   195b:   vzeroupper
+         : 27   }
+    0.00 :   195e:   ret

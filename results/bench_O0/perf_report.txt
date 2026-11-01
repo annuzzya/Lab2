@@ -1,0 +1,60 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 6K of event 'task-clock:ppp'
+# Event count (approx.): 6168168162
+#
+# Overhead  Command   Shared Object      Symbol                                IPC   [IPC Coverage]
+# ........  ........  .................  ....................................  ....................
+#
+    39.60%  bench_O0  bench_O0           [.] matmul                            -      -            
+            |
+            ---matmul
+               main
+               __libc_start_call_main
+               __libc_start_main_impl (inlined)
+               _start
+    21.68%  bench_O0  bench_O0           [.] dot                               -      -            
+            |
+            ---dot
+               main
+               __libc_start_call_main
+               __libc_start_main_impl (inlined)
+               _start
+    17.36%  bench_O0  bench_O0           [.] saxpy                             -      -            
+            |
+            ---saxpy
+               main
+               __libc_start_call_main
+               __libc_start_main_impl (inlined)
+               _start
+    10.81%  bench_O0  bench_O0           [.] cmp                               -      -            
+            |
+            ---cmp
+               msort_with_tmp (inlined)
+               |          
+                --10.74%--msort_with_tmp (inlined)
+                          |          
+                          |--10.08%--msort_with_tmp (inlined)
+                          |          msort_with_tmp (inlined)
+                          |          |          
+                          |          |--9.49%--msort_with_tmp (inlined)
+                          |          |          msort_with_tmp (inlined)
+                          |          |          |          
+                          |          |          |--8.89%--msort_with_tmp (inlined)
+                          |          |          |          msort_with_tmp (inlined)
+                          |          |          |          |          
+                          |          |          |          |--8.34%--msort_with_tmp (inlined)
+                          |          |          |          |          msort_with_tmp (inlined)
+                          |          |          |          |          |          
+                          |          |          |          |          |--7.66%--msort_with_tmp (inlined)
+                          |          |          |          |          |          msort_with_tmp (inlined)
+                          |          |          |          |          |          |          
+                          |          |          |          |          |          |--7.04%--msort_with_tmp (inlined)
+                          |          |          |          |          |          |          msort_with_tmp (inlined)
+                          |          |          |          |          |          |          |          
+                          |          |          |          |          |          |          |--6.39%--msort_with_tmp (inlined)
+                          |          |          |          |          |          |          |          msort_with_tmp (inlined)
+                          |          |          |          |          |          |          |          |          

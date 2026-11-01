@@ -1,0 +1,108 @@
+ Percent |	Source code & Disassembly of bench_O0 for task-clock:ppp (2440 samples, percent: local period)
+--------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    000000000000130a <matmul>:
+         : 6    p[i] = (float)(seed >> 8) / 16777216.0f;
+         : 7    }
+         : 8    }
+         :
+         : 10   __attribute__((noinline)) void matmul(const float *a, const float *b, float *c, int n)
+         : 11   {
+    0.00 :   130a:   endbr64
+    0.00 :   130e:   push   rbp
+    0.00 :   130f:   mov    rbp,rsp
+    0.00 :   1312:   sub    rsp,0x30
+    0.00 :   1316:   mov    QWORD PTR [rbp-0x18],rdi
+    0.00 :   131a:   mov    QWORD PTR [rbp-0x20],rsi
+    0.00 :   131e:   mov    QWORD PTR [rbp-0x28],rdx
+    0.00 :   1322:   mov    DWORD PTR [rbp-0x2c],ecx
+         : 20   memset(c, 0, sizeof(float) * n * n);
+    0.00 :   1325:   mov    eax,DWORD PTR [rbp-0x2c]
+    0.00 :   1328:   movsxd rdx,eax
+    0.00 :   132b:   mov    eax,DWORD PTR [rbp-0x2c]
+    0.00 :   132e:   cdqe
+    0.00 :   1330:   imul   rax,rdx
+    0.00 :   1334:   lea    rdx,[rax*4+0x0]
+    0.00 :   133c:   mov    rax,QWORD PTR [rbp-0x28]
+    0.00 :   1340:   mov    esi,0x0
+    0.00 :   1345:   mov    rdi,rax
+    0.00 :   1348:   call   10f0 <memset@plt>
+         : 31   for (int i = 0; i < n; i++)
+    0.00 :   134d:   mov    DWORD PTR [rbp-0x10],0x0
+    0.00 :   1354:   jmp    1428 <matmul+0x11e>
+         : 34   for (int k = 0; k < n; k++) {
+    0.00 :   1359:   mov    DWORD PTR [rbp-0xc],0x0
+    0.00 :   1360:   jmp    1418 <matmul+0x10e>
+         : 37   float s = a[i * n + k];
+    0.00 :   1365:   mov    eax,DWORD PTR [rbp-0x10]
+    0.00 :   1368:   imul   eax,DWORD PTR [rbp-0x2c]
+    0.00 :   136c:   mov    edx,eax
+    0.00 :   136e:   mov    eax,DWORD PTR [rbp-0xc]
+    0.12 :   1371:   add    eax,edx
+    0.04 :   1373:   cdqe
+    0.04 :   1375:   lea    rdx,[rax*4+0x0]
+    0.04 :   137d:   mov    rax,QWORD PTR [rbp-0x18]
+    0.00 :   1381:   add    rax,rdx
+    0.08 :   1384:   movss  xmm0,DWORD PTR [rax]
+    0.20 :   1388:   movss  DWORD PTR [rbp-0x4],xmm0
+         : 49   for (int j = 0; j < n; j++)
+    0.00 :   138d:   mov    DWORD PTR [rbp-0x8],0x0
+    0.00 :   1394:   jmp    140c <matmul+0x102>
+         : 52   c[i * n + j] += s * b[k * n + j];
+    9.39 :   1396:   mov    eax,DWORD PTR [rbp-0x10]
+    0.00 :   1399:   imul   eax,DWORD PTR [rbp-0x2c]
+    0.08 :   139d:   mov    edx,eax
+    0.00 :   139f:   mov    eax,DWORD PTR [rbp-0x8]
+    9.51 :   13a2:   add    eax,edx
+    0.04 :   13a4:   cdqe
+    0.08 :   13a6:   lea    rdx,[rax*4+0x0]
+    0.04 :   13ae:   mov    rax,QWORD PTR [rbp-0x28]
+    9.26 :   13b2:   add    rax,rdx
+    0.08 :   13b5:   movss  xmm1,DWORD PTR [rax]
+    3.28 :   13b9:   mov    eax,DWORD PTR [rbp-0xc]
+    0.04 :   13bc:   imul   eax,DWORD PTR [rbp-0x2c]
+    7.91 :   13c0:   mov    edx,eax
+    0.00 :   13c2:   mov    eax,DWORD PTR [rbp-0x8]
+    1.43 :   13c5:   add    eax,edx
+    0.00 :   13c7:   cdqe
+    8.61 :   13c9:   lea    rdx,[rax*4+0x0]
+    0.00 :   13d1:   mov    rax,QWORD PTR [rbp-0x20]
+    1.23 :   13d5:   add    rax,rdx
+    0.00 :   13d8:   movss  xmm0,DWORD PTR [rax]
+    9.14 :   13dc:   mulss  xmm0,DWORD PTR [rbp-0x4]
+    2.83 :   13e1:   mov    eax,DWORD PTR [rbp-0x10]
+    0.86 :   13e4:   imul   eax,DWORD PTR [rbp-0x2c]
+    0.00 :   13e8:   mov    edx,eax
+    7.21 :   13ea:   mov    eax,DWORD PTR [rbp-0x8]
+    1.48 :   13ed:   add    eax,edx
+    0.61 :   13ef:   cdqe
+    0.00 :   13f1:   lea    rdx,[rax*4+0x0]
+    7.87 :   13f9:   mov    rax,QWORD PTR [rbp-0x28]
+    0.86 :   13fd:   add    rax,rdx
+    0.82 :   1400:   addss  xmm0,xmm1
+    6.02 :   1404:   movss  DWORD PTR [rax],xmm0
+         : 85   for (int j = 0; j < n; j++)
+    9.14 :   1408:   add    DWORD PTR [rbp-0x8],0x1
+    0.00 :   140c:   mov    eax,DWORD PTR [rbp-0x8]
+    1.31 :   140f:   cmp    eax,DWORD PTR [rbp-0x2c]
+    0.00 :   1412:   jl     1396 <matmul+0x8c>
+         : 90   for (int k = 0; k < n; k++) {
+    0.00 :   1414:   add    DWORD PTR [rbp-0xc],0x1
+    0.29 :   1418:   mov    eax,DWORD PTR [rbp-0xc]
+    0.04 :   141b:   cmp    eax,DWORD PTR [rbp-0x2c]
+    0.00 :   141e:   jl     1365 <matmul+0x5b>
+         : 95   for (int i = 0; i < n; i++)
+    0.00 :   1424:   add    DWORD PTR [rbp-0x10],0x1
+    0.00 :   1428:   mov    eax,DWORD PTR [rbp-0x10]
+    0.00 :   142b:   cmp    eax,DWORD PTR [rbp-0x2c]
+    0.00 :   142e:   jl     1359 <matmul+0x4f>
+         : 100  }
+         : 101  }
+    0.00 :   1434:   nop
+    0.00 :   1435:   nop
+    0.00 :   1436:   leave
+    0.00 :   1437:   ret

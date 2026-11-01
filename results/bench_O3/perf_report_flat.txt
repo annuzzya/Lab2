@@ -1,0 +1,21 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'task-clock:ppp'
+# Event count (approx.): 2026026024
+#
+# Overhead  Command   Shared Object      Symbol                              
+# ........  ........  .................  ....................................
+#
+    30.73%  bench_O3  bench_O3           [.] dot.constprop.0
+    26.63%  bench_O3  libc.so.6          [.] msort_with_tmp.part.0
+    18.53%  bench_O3  bench_O3           [.] saxpy.constprop.0
+    13.49%  bench_O3  bench_O3           [.] cmp
+     4.35%  bench_O3  bench_O3           [.] matmul.constprop.0
+     3.46%  bench_O3  libc.so.6          [.] __memmove_evex_unaligned_erms
+     1.14%  bench_O3  bench_O3           [.] fill
+#
+# (Cannot load tips.txt file, please install perf!)
+#

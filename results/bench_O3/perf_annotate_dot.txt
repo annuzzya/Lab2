@@ -1,0 +1,115 @@
+ Percent |	Source code & Disassembly of bench_O3 for task-clock:ppp (622 samples, percent: local period)
+-------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    00000000000017d0 <dot.constprop.0>:
+         : 6    {
+         : 7    for (size_t i = 0; i < n; i++)
+         : 8    y[i] = a * x[i] + y[i];
+         : 9    }
+         :
+         : 11   __attribute__((noinline)) float dot(const float *x, const float *y, size_t n)
+    0.00 :   17d0:   mov    rdx,rdi
+         : 13   {
+         : 14   float s = 0.0f;
+         : 15   for (size_t i = 0; i < n; i++)
+    0.00 :   17d3:   test   rsi,rsi
+    0.00 :   17d6:   je     1900 <dot.constprop.0+0x130>
+    0.00 :   17dc:   lea    rax,[rsi-0x1]
+    0.00 :   17e0:   cmp    rax,0x6
+    0.00 :   17e4:   jbe    190c <dot.constprop.0+0x13c>
+    0.00 :   17ea:   mov    rdi,rsi
+         : 22   float s = 0.0f;
+    0.00 :   17ed:   vxorps xmm0,xmm0,xmm0
+    0.00 :   17f1:   lea    rcx,[rip+0x1403848]        # 1405040 <X>
+         : 25   for (size_t i = 0; i < n; i++)
+    0.00 :   17f8:   xor    eax,eax
+    0.00 :   17fa:   shr    rdi,0x3
+    0.00 :   17fe:   shl    rdi,0x5
+    0.00 :   1802:   nop    WORD PTR [rax+rax*1+0x0]
+         : 30   s += x[i] * y[i];
+    0.00 :   1808:   vmovups ymm4,YMMWORD PTR [rdx+rax*1]
+    4.66 :   180d:   vmulps ymm1,ymm4,YMMWORD PTR [rcx+rax*1]
+    9.49 :   1812:   add    rax,0x20
+    0.00 :   1816:   vaddss xmm0,xmm0,xmm1
+    9.65 :   181a:   vshufps xmm3,xmm1,xmm1,0x55
+    0.00 :   181f:   vshufps xmm2,xmm1,xmm1,0xff
+    0.00 :   1824:   vaddss xmm0,xmm0,xmm3
+   11.58 :   1828:   vunpckhps xmm3,xmm1,xmm1
+    0.00 :   182c:   vextractf128 xmm1,ymm1,0x1
+    0.00 :   1832:   vaddss xmm0,xmm0,xmm3
+   13.67 :   1836:   vaddss xmm0,xmm0,xmm2
+    9.16 :   183a:   vshufps xmm2,xmm1,xmm1,0x55
+    0.00 :   183f:   vaddss xmm0,xmm0,xmm1
+   10.13 :   1843:   vaddss xmm0,xmm0,xmm2
+    8.36 :   1847:   vunpckhps xmm2,xmm1,xmm1
+    0.16 :   184b:   vshufps xmm1,xmm1,xmm1,0xff
+    0.00 :   1850:   vaddss xmm0,xmm0,xmm2
+   10.29 :   1854:   vaddss xmm0,xmm0,xmm1
+         : 49   for (size_t i = 0; i < n; i++)
+   12.86 :   1858:   cmp    rdi,rax
+    0.00 :   185b:   jne    1808 <dot.constprop.0+0x38>
+    0.00 :   185d:   mov    rax,rsi
+    0.00 :   1860:   and    rax,0xfffffffffffffff8
+    0.00 :   1864:   test   sil,0x7
+    0.00 :   1868:   je     1908 <dot.constprop.0+0x138>
+    0.00 :   186e:   vzeroupper
+    0.00 :   1871:   mov    rdi,rsi
+    0.00 :   1874:   sub    rdi,rax
+    0.00 :   1877:   lea    r8,[rdi-0x1]
+    0.00 :   187b:   cmp    r8,0x2
+    0.00 :   187f:   jbe    18b8 <dot.constprop.0+0xe8>
+         : 62   s += x[i] * y[i];
+    0.00 :   1881:   vmovups xmm5,XMMWORD PTR [rdx+rax*4]
+    0.00 :   1886:   vmulps xmm1,xmm5,XMMWORD PTR [rcx+rax*4]
+    0.00 :   188b:   mov    r8,rdi
+    0.00 :   188e:   and    r8,0xfffffffffffffffc
+    0.00 :   1892:   add    rax,r8
+    0.00 :   1895:   and    edi,0x3
+    0.00 :   1898:   vaddss xmm0,xmm0,xmm1
+    0.00 :   189c:   vshufps xmm2,xmm1,xmm1,0x55
+    0.00 :   18a1:   vaddss xmm0,xmm0,xmm2
+    0.00 :   18a5:   vunpckhps xmm2,xmm1,xmm1
+    0.00 :   18a9:   vshufps xmm1,xmm1,xmm1,0xff
+    0.00 :   18ae:   vaddss xmm0,xmm0,xmm2
+    0.00 :   18b2:   vaddss xmm0,xmm0,xmm1
+         : 76   for (size_t i = 0; i < n; i++)
+    0.00 :   18b6:   je     1904 <dot.constprop.0+0x134>
+    0.00 :   18b8:   lea    r8,[rax+0x1]
+         : 79   s += x[i] * y[i];
+    0.00 :   18bc:   vmovss xmm6,DWORD PTR [rcx+rax*4]
+    0.00 :   18c1:   lea    rdi,[rax*4+0x0]
+    0.00 :   18c9:   vfmadd231ss xmm0,xmm6,DWORD PTR [rdx+rax*4]
+         : 83   for (size_t i = 0; i < n; i++)
+    0.00 :   18cf:   cmp    r8,rsi
+    0.00 :   18d2:   jae    1904 <dot.constprop.0+0x134>
+    0.00 :   18d4:   add    rax,0x2
+         : 87   s += x[i] * y[i];
+    0.00 :   18d8:   vmovss xmm7,DWORD PTR [rcx+rdi*1+0x4]
+    0.00 :   18de:   vfmadd231ss xmm0,xmm7,DWORD PTR [rdx+rdi*1+0x4]
+         : 90   for (size_t i = 0; i < n; i++)
+    0.00 :   18e5:   cmp    rax,rsi
+    0.00 :   18e8:   jae    1904 <dot.constprop.0+0x134>
+         : 93   s += x[i] * y[i];
+    0.00 :   18ea:   vmovss xmm7,DWORD PTR [rcx+rdi*1+0x8]
+    0.00 :   18f0:   vfmadd231ss xmm0,xmm7,DWORD PTR [rdx+rdi*1+0x8]
+         : 96   for (size_t i = 0; i < n; i++)
+    0.00 :   18f7:   ret
+    0.00 :   18f8:   nop    DWORD PTR [rax+rax*1+0x0]
+         : 99   float s = 0.0f;
+    0.00 :   1900:   vxorps xmm0,xmm0,xmm0
+         : 101  return s;
+         : 102  }
+    0.00 :   1904:   ret
+    0.00 :   1905:   nop    DWORD PTR [rax]
+    0.00 :   1908:   vzeroupper
+    0.00 :   190b:   ret
+         : 107  float s = 0.0f;
+    0.00 :   190c:   vxorps xmm0,xmm0,xmm0
+         : 109  for (size_t i = 0; i < n; i++)
+    0.00 :   1910:   xor    eax,eax
+    0.00 :   1912:   lea    rcx,[rip+0x1403727]        # 1405040 <X>
+    0.00 :   1919:   jmp    1871 <dot.constprop.0+0xa1>

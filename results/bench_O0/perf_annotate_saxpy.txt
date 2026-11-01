@@ -1,0 +1,53 @@
+ Percent |	Source code & Disassembly of bench_O0 for task-clock:ppp (1070 samples, percent: local period)
+--------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    0000000000001438 <saxpy>:
+         : 6    c[i * n + j] += s * b[k * n + j];
+         : 7    }
+         : 8    }
+         :
+         : 10   __attribute__((noinline)) void saxpy(float a, const float *x, float *y, size_t n)
+         : 11   {
+    0.00 :   1438:   endbr64
+    0.00 :   143c:   push   rbp
+    0.00 :   143d:   mov    rbp,rsp
+    0.00 :   1440:   movss  DWORD PTR [rbp-0x14],xmm0
+    0.00 :   1445:   mov    QWORD PTR [rbp-0x20],rdi
+    0.00 :   1449:   mov    QWORD PTR [rbp-0x28],rsi
+    0.00 :   144d:   mov    QWORD PTR [rbp-0x30],rdx
+         : 19   for (size_t i = 0; i < n; i++)
+    0.00 :   1451:   mov    QWORD PTR [rbp-0x8],0x0
+    0.00 :   1459:   jmp    14b1 <saxpy+0x79>
+         : 22   y[i] = a * x[i] + y[i];
+    7.20 :   145b:   mov    rax,QWORD PTR [rbp-0x8]
+    0.00 :   145f:   lea    rdx,[rax*4+0x0]
+    3.93 :   1467:   mov    rax,QWORD PTR [rbp-0x20]
+    0.00 :   146b:   add    rax,rdx
+    9.35 :   146e:   movss  xmm0,DWORD PTR [rax]
+    7.38 :   1472:   movaps xmm1,xmm0
+    3.36 :   1475:   mulss  xmm1,DWORD PTR [rbp-0x14]
+   12.34 :   147a:   mov    rax,QWORD PTR [rbp-0x8]
+    5.23 :   147e:   lea    rdx,[rax*4+0x0]
+    0.09 :   1486:   mov    rax,QWORD PTR [rbp-0x28]
+    2.06 :   148a:   add    rax,rdx
+    3.64 :   148d:   movss  xmm0,DWORD PTR [rax]
+    9.44 :   1491:   mov    rax,QWORD PTR [rbp-0x8]
+    0.00 :   1495:   lea    rdx,[rax*4+0x0]
+    3.55 :   149d:   mov    rax,QWORD PTR [rbp-0x28]
+    3.83 :   14a1:   add    rax,rdx
+    5.51 :   14a4:   addss  xmm0,xmm1
+    9.07 :   14a8:   movss  DWORD PTR [rax],xmm0
+         : 41   for (size_t i = 0; i < n; i++)
+   10.28 :   14ac:   add    QWORD PTR [rbp-0x8],0x1
+    3.64 :   14b1:   mov    rax,QWORD PTR [rbp-0x8]
+    0.09 :   14b5:   cmp    rax,QWORD PTR [rbp-0x30]
+    0.00 :   14b9:   jb     145b <saxpy+0x23>
+         : 46   }
+    0.00 :   14bb:   nop
+    0.00 :   14bc:   nop
+    0.00 :   14bd:   pop    rbp
+    0.00 :   14be:   ret

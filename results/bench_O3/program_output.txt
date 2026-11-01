@@ -1,0 +1,7 @@
+fill        0.031 s
+matmul      0.060 s
+saxpy       0.303 s
+dot         0.590 s
+sort        0.833 s
+total       1.818 s
+checksum 774.984559
